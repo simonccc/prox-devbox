@@ -1,0 +1,46 @@
+[proxmox]
+; domain or ip to access proxmox
+prox_endpoint = 127.0.0.1
+; api port ( usually 8006 ) 
+port = 8006
+; username to connect with / owner of the api token
+user = root@pam
+; name of api token
+token_name = devbox
+; text of api key
+api_key = xxxxxxxxxxxxx
+; the proxmox node that you will run devbox on - the image and all nodes are created on this host
+node = proxmox
+; the proxmox storage to use for devbox - needs to be available on the proxmox node
+storage = local-lvm
+
+[devbox]
+; the upstream cloud image used to create the devbox image
+cloud_image_url = https://cloud-images.ubuntu.com/minimal/daily/oracular/current/oracular-minimal-cloudimg-amd64.img
+; size of vm disk in gib 
+vm_disk = 20
+; number of cpu cores 
+vm_cpu = 1
+; amount of ram in gib 
+vm_ram = 2
+; username for created cloudinit user
+cloudinituser = user
+; password for the cloudinit user
+cloudinitpass = admin
+;  a ssh public key for the cloudinit user ( required ) 
+cloudinitsshkey = ssh-rsa cioieocieo
+; network bridge to use with devbox
+; a proxmox sdn can be used by specifying the zone and vnet like this: sdn/zone/vnet
+network_bridge = vmbr0
+; first ip of the ip range used for this devbox cluster
+network_ip = 192.168.0.160
+; /24 is 255.255.255.0
+network_mask = 24
+; default gateway for the network ( needs to provide internet access ) 
+network_gw = 192.168.0.1
+; dns server for network
+network_dns = 192.168.0.1
+; interface mtu set on vms 
+; set to 1450 if using sdn 
+network_mtu = 1500
+
