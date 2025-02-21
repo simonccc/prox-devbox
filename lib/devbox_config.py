@@ -260,7 +260,7 @@ except:
 
   except:
     # no image found
-    kmsg(kname, f'{cluster_name} image not found - please run "devbox image create"', 'err')
+    kmsg(kname, f'image not found - please run "devbox image create"', 'err')
     exit(0)
 
   # get image info

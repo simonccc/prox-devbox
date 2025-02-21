@@ -57,12 +57,10 @@ sudo virt-customize --smp 2 -m 2048 -a {cloud_image}   \
 '''
   local_os_process(virtc_cmd)
 
-  # destroy template if it exists
-  prox_destroy(dev_id)
-
   # define image desc
   img_ts = str(datetime.now())
   image_desc = f'devbox {img_ts}'
+  prox_destroy(dev_id)
 
   # create new server
   prox_task(prox.nodes(node).qemu.post(

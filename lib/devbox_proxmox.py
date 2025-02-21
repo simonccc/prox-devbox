@@ -104,9 +104,6 @@ def prox_destroy(vmid: int):
 
     kname = 'destroy_devbox'
 
-    # get node and vmname
-    node = vms[vmid]
-
     # if destroying image
     if vmid == dev_id:
       prox_task(prox.nodes(node).qemu(dev_id).delete())

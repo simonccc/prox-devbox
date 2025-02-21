@@ -15,6 +15,7 @@ node = proxmox
 storage = local-lvm
 
 [devbox]
+dev_id = 123
 ; the upstream cloud image used to create the devbox image
 cloud_image_url = https://cloud-images.ubuntu.com/minimal/daily/oracular/current/oracular-minimal-cloudimg-amd64.img
 ; size of vm disk in gib 
